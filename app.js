@@ -19,13 +19,16 @@ class Player {
   // - If legal to play play it
   // - if not get an alert that you can't play it
   // - If 8 show a screen to change the suite settings
-  playCard() {}
+  playCard(card) {}
 
   //Display cards to screen
   // - Show the picture for each card
   // - If time allows, add animations
   displayHand() {
     let hand = document.querySelector(".player");
+    for (let i = 0; i < this.hand.length; i++) {
+      console.log(this.hand[i]);
+    }
   }
 }
 
@@ -36,7 +39,7 @@ class Computer {
   // - The card pile to reference the top card and suite
 
   constructor(deck, pile) {
-    this.hand = [];
+    this.hand = [new Card("1", "h"), new Card("1", "h"), new Card("1", "h")];
     this.deck = deck;
     this.pile = pile;
   }
@@ -52,7 +55,7 @@ class Computer {
   // ----- For simplicty if 8 is played keep suite as the suite of the 8
   // --------- If time allows create logic to change suite for computer accodingly
   //--Draw a card if it can't find a card to play
-  playCard() {}
+  playCard(card) {}
 
   //Display cards to screen
   // --Simply show card backs
@@ -60,7 +63,11 @@ class Computer {
   displayHand() {
     let hand = document.querySelector(".player");
     for (let i = 0; i < this.hand.length; i++) {
-      console.log(this.hand);
+      console.log(this.hand[i]);
+      let back = document.createElement("img");
+      back.setAttribute("src", "Images/cardbackred.png");
+      back.setAttribute("class", "comHand");
+      document.querySelector(".computer").append(back);
     }
   }
 }
@@ -149,7 +156,11 @@ class CardPile {
 
 //Game loop functions and parameters
 let deck = new Deck();
-let pile = new CardPile();
+let pile = new CardPile(deck.dealACard());
+
+let com = new Computer(deck, pile);
+
+com.displayHand();
 
 // console.log(deck.deckList);
 
