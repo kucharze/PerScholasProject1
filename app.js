@@ -39,7 +39,10 @@ class Card {
   // - Value: number of the card or jack, queen, king, ace
   // Suite: heart, diamond, club, spade
   // Image: the link for what image to display for the card
-  constructor() {}
+  constructor(value, suite) {
+    this.suite = suite;
+    this.value = value;
+  }
 }
 
 //Class for deck
@@ -49,7 +52,31 @@ class Deck {
   //Functions
   // - Deal a card out
   // - Reset the deck if we run low on cards
-  constructor() {}
+  constructor() {
+    this.deckList = [];
+    let suites = ["S", "J", "D", "H"];
+    let values = [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "J",
+      "Q",
+      "K",
+      "A",
+    ];
+    for (let i = 0; i < values.length; i++) {
+      for (let j = 0; j < suites.length; j++) {
+        this.deckList.push(new Card(values[i], suites[j]));
+      }
+    }
+  }
 }
 
 //Class for pile
@@ -64,10 +91,17 @@ class CardPile {
   //Add card to deck
   // Place a card on top of the deck and set suite and value
   // --Time allows, add animations
-  constructor() {}
+  constructor(top) {
+    this.topCard = this.top;
+    this.suite = top.suite;
+    this.value = top.value;
+  }
 }
 
 //Game loop functions and parameters
+let deck = new Deck();
+
+console.log(deck.deckList);
 
 //Take turns
 const processTurns = () => {
