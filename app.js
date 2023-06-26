@@ -12,7 +12,11 @@ class Player {
   //Display cards to screen
   // - Show the picture for each card
   // - If time allows, add animations
-  constructor() {}
+  constructor(deck, pile) {
+    this.hand = [];
+    this.deck = deck;
+    this.pile = pile;
+  }
 }
 
 //Class for computer
@@ -30,7 +34,11 @@ class Computer {
   //Display cards to screen
   // --Simply show card backs
   // -- If time allows show animations
-  constructor() {}
+  constructor(deck, pile) {
+    this.hand = [];
+    this.deck = deck;
+    this.pile = pile;
+  }
 }
 
 class Card {
