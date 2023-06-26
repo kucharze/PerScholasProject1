@@ -3,6 +3,13 @@ class Player {
   //parameters
   // - list of cards in hand
   // - The card pile to reference top card and suite
+
+  constructor(deck, pile) {
+    this.hand = [];
+    this.deck = deck;
+    this.pile = pile;
+  }
+
   //Functions
   //Draw a card from the deck
   //Play a card from hand
@@ -12,11 +19,6 @@ class Player {
   //Display cards to screen
   // - Show the picture for each card
   // - If time allows, add animations
-  constructor(deck, pile) {
-    this.hand = [];
-    this.deck = deck;
-    this.pile = pile;
-  }
 }
 
 //Class for computer
@@ -24,6 +26,13 @@ class Computer {
   //parameters
   // - list of cards in hand
   // - The card pile to reference the top card and suite
+
+  constructor(deck, pile) {
+    this.hand = [];
+    this.deck = deck;
+    this.pile = pile;
+  }
+
   //Functions
   //Draw a card from the deck
   //Play a card from hand
@@ -34,11 +43,6 @@ class Computer {
   //Display cards to screen
   // --Simply show card backs
   // -- If time allows show animations
-  constructor(deck, pile) {
-    this.hand = [];
-    this.deck = deck;
-    this.pile = pile;
-  }
 }
 
 class Card {
@@ -57,11 +61,22 @@ class Card {
 class Deck {
   //Paramters
   // - List of cards in the deck
-  //Functions
-  // - Deal a card out
-  // - Reset the deck if we run low on cards
+
   constructor() {
     this.deckList = [];
+  }
+
+  //Functions
+  // - Deal a card out
+  dealACard() {
+    return this.deckList.splice(0, 1);
+  }
+  //shuffle the deck
+  shuffle() {
+    //randomly swap cards araound in deck
+  }
+  // - Reset the deck if we run low on cards
+  remake() {
     let suites = ["S", "J", "D", "H"];
     let values = [
       "1",
@@ -93,17 +108,19 @@ class CardPile {
   // - Value for top card value
   // - Value for suit
   // - The top card
+
+  constructor(top) {
+    this.topCard = this.top;
+    this.suite = top.suite;
+    this.value = top.value;
+  }
+
   //Functions
   //Set suite - Change the suite
   //Set value - Change the value
   //Add card to deck
   // Place a card on top of the deck and set suite and value
   // --Time allows, add animations
-  constructor(top) {
-    this.topCard = this.top;
-    this.suite = top.suite;
-    this.value = top.value;
-  }
 }
 
 //Game loop functions and parameters
