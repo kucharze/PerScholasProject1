@@ -56,11 +56,13 @@
 
 //Take turns
 // - Run through the player's turn
+// - If turn processed check if they won (0 cards in hand)
 // - If the player properly processed their turn, or has not won yet, go to Computer turn
-// - Check if computer won, if not, process logic and get ready for another round
+// - Check if computer won (0 cards ), if not, process logic and get ready for another round
 
 //Choose a suite to pass in
-//Set the suite variable of the function
+//Call pile set suit
+//Set pile value to 8
 //Let the computer have a turn
 
 //Startup function
