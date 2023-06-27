@@ -13,12 +13,17 @@
     <!--Title-->
     <h1>Crazy Eights</h1>
     <!--Computer players hand-->
-    <div class="computer"></div>
+    <div class="computerSpace">
+      <h2>Computer</h2>
+      <div class="computer"></div>
+    </div>
 
     <!--Dealer table-->
     <div class="mainTable">
       <!-- --Deck -->
-      <div class="deck"></div>
+      <div class="deckSpace">
+        <img src="Images/cardbackred.png" alt="" class="deck" />
+      </div>
       <!-- --Card pile-->
       <div class="cardPile"></div>
       <!-- --Suite picker for when an 8 is played-->
@@ -34,7 +39,11 @@
     </div>
 
     <!--Player hand-->
-    <div class="player"></div>
+    <div class="playerSpace">
+      <h2>Player 1</h2>
+      <div class="player"></div>
+    </div>
+
     <script src="app.js" async defer></script>
   </body>
 </html>
