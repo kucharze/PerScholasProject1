@@ -255,7 +255,10 @@ class CardPile {
 
   //Functions
   //Set suite - Change the suite
-  //Set value - Change the value
+  setSuite(suite) {
+    this.suite = suite;
+    console.log(this.topCard, this.suite, this.value);
+  }
   //Add card to deck
   addCard(card, update) {
     // Place a card on top of the deck and set suite and value
@@ -264,6 +267,8 @@ class CardPile {
 
     this.value = card.value;
 
+    //We should update the suite
+    //This does not run if we play an 8
     if (update) {
       this.suite = card.suite;
     }
@@ -306,6 +311,7 @@ const chooseSuite = (suite) => {
   console.log(suite);
 
   document.querySelector(".suitePicker").style = "display:none";
+  pile.setSuite(suite);
 };
 
 //Startup function
