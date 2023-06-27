@@ -205,13 +205,9 @@ class Deck {
   //Functions
   // - Deal a card out
   dealACard() {
-    let accuracy = Math.floor(Math.random() * (this.deckList.length - 0) + 0);
+    let spot = Math.floor(Math.random() * (this.deckList.length - 0) + 0);
     //Randomize what position we pick??
-    return this.deckList.splice(accuracy, 1)[0];
-  }
-  //shuffle the deck
-  shuffle() {
-    //randomly swap cards araound in deck
+    return this.deckList.splice(spot, 1)[0];
   }
 
   // - Reset the deck if we run low on cards
