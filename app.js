@@ -26,6 +26,13 @@ class Player {
       if (playCard === undefined) {
         return "Error can't find card";
       }
+
+      if (value === "8") {
+        //Reveak suite picker and do not process further
+        //Disable card pick logic
+        return "is an 8";
+      }
+
       return playCard;
     } else {
       return "Illegal move";
@@ -41,6 +48,12 @@ class Player {
     }
   }
 
+  //Enable hand events
+  disableHand() {}
+
+  //disable hand events
+  enableHands() {}
+
   //Display cards to screen
   // - Show the picture for each card
   // - If time allows, add animations
@@ -54,8 +67,13 @@ class Player {
       let back = document.createElement("img");
       back.setAttribute("src", "Images/cardbackred.png");
       back.setAttribute("class", "playerHand");
-      back.addEventListener("click", () => {
+      back.setAttribute("title", "playerHand");
+      back.setAttribute("value", "The");
+      back.setAttribute("suite", "player");
+      back.addEventListener("click", (e) => {
+        //https://stackoverflow.com/questions/58435999/grab-dom-attribute-on-event-target
         console.log("You clicked me");
+        console.log(e.target.getAttribute("hand"));
       });
       handspace.append(back);
     }
@@ -166,6 +184,7 @@ class Deck {
   //Functions
   // - Deal a card out
   dealACard() {
+    //Randomize what position we pick??
     return this.deckList.splice(0, 1)[0];
   }
   //shuffle the deck
