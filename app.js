@@ -39,10 +39,11 @@ class Player {
         //Reveak suite picker and do not process further
         //Disable card pick logic
         document.querySelector(".suitePicker").style = "display: block";
+        this.pile.addCard(playCard, false);
         return false;
       }
       console.log(playCard);
-      this.pile.topCard;
+      this.pile.addCard(playCard, true);
       return true;
     } else {
       alert("Illegal move");
@@ -264,6 +265,8 @@ class CardPile {
     if (update) {
       this.suite = card.suite;
     }
+
+    console.log(this.topCard, this.suite, this.value);
   }
 
   //display the card on top of the deck
