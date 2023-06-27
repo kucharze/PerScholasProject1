@@ -25,9 +25,16 @@ class Player {
   // - Show the picture for each card
   // - If time allows, add animations
   displayHand() {
-    let hand = document.querySelector(".player");
+    console.log(this.hand);
+
+    let handspace = document.querySelector(".player");
+    handspace.replaceChildren();
+
     for (let i = 0; i < this.hand.length; i++) {
-      console.log(this.hand[i]);
+      let back = document.createElement("img");
+      back.setAttribute("src", "Images/cardbackred.png");
+      back.setAttribute("class", "playerHand");
+      handspace.append(back);
     }
   }
 }
@@ -39,7 +46,7 @@ class Computer {
   // - The card pile to reference the top card and suite
 
   constructor(deck, pile) {
-    this.hand = [new Card("1", "h"), new Card("1", "h"), new Card("1", "h")];
+    this.hand = [];
     this.deck = deck;
     this.pile = pile;
   }
@@ -61,13 +68,14 @@ class Computer {
   // --Simply show card backs
   // -- If time allows show animations
   displayHand() {
-    let hand = document.querySelector(".player");
+    console.log(this.hand);
+    let handspace = document.querySelector(".computer");
+    handspace.replaceChildren();
     for (let i = 0; i < this.hand.length; i++) {
-      console.log(this.hand[i]);
       let back = document.createElement("img");
       back.setAttribute("src", "Images/cardbackred.png");
       back.setAttribute("class", "comHand");
-      document.querySelector(".computer").append(back);
+      handspace.append(back);
     }
   }
 }
@@ -159,8 +167,9 @@ let deck = new Deck();
 let pile = new CardPile(deck.dealACard());
 
 let com = new Computer(deck, pile);
+let player = new Player(deck, pile);
 
-com.displayHand();
+// com.displayHand();
 
 // console.log(deck.deckList);
 
@@ -182,9 +191,20 @@ const chooseSuite = (suite) => {
 //Startup function
 const startUp = () => {
   // Deal out player hands
+  for (let i = 0; i < 5; i++) {
+    com.hand.push(deck.dealACard());
+  }
+  com.displayHand();
+
+  for (let i = 0; i < 5; i++) {
+    player.hand.push(deck.dealACard());
+  }
+  player.displayHand();
 };
 
 //Restart function
 const restart = () => {
   //Clear the board and call startup function to startup a new game
 };
+
+startUp();
