@@ -180,7 +180,7 @@ class Deck {
 
     let suites = ["s", "c", "d", "h"];
     let values = [
-      "1",
+      "a",
       "2",
       "3",
       "4",
@@ -205,8 +205,9 @@ class Deck {
   //Functions
   // - Deal a card out
   dealACard() {
+    let accuracy = Math.floor(Math.random() * (this.deckList.length - 0) + 0);
     //Randomize what position we pick??
-    return this.deckList.splice(0, 1)[0];
+    return this.deckList.splice(accuracy, 1)[0];
   }
   //shuffle the deck
   shuffle() {
