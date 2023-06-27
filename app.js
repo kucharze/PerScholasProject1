@@ -30,7 +30,14 @@ class Player {
 
   //Remove a card from our hand
   removeCard(card) {
-    for (let i = 0; i < this.hand.length; i++) {}
+    for (let i = 0; i < this.hand.length; i++) {
+      if (
+        card.value === this.hand[i].value &&
+        card.suite === this.hand[i].suite
+      ) {
+        return this.hand.splice(i, 1);
+      }
+    }
   }
 
   //Display cards to screen
@@ -75,6 +82,18 @@ class Computer {
   // --------- If time allows create logic to change suite for computer accodingly
   //--Draw a card if it can't find a card to play
   playCard(card) {}
+
+  //Remove a card from our hand
+  removeCard(card) {
+    for (let i = 0; i < this.hand.length; i++) {
+      if (
+        card.value === this.hand[i].value &&
+        card.suite === this.hand[i].suite
+      ) {
+        return this.hand.splice(i, 1);
+      }
+    }
+  }
 
   //Display cards to screen
   // --Simply show card backs
