@@ -178,8 +178,8 @@ class Deck {
   constructor() {
     this.deckList = [];
 
-    let suites = ["s", "c", "d", "h"];
-    let values = [
+    this.suites = ["s", "c", "d", "h"];
+    this.values = [
       "a",
       "2",
       "3",
@@ -195,9 +195,9 @@ class Deck {
       "K",
       "A",
     ];
-    for (let i = 0; i < values.length; i++) {
-      for (let j = 0; j < suites.length; j++) {
-        this.deckList.push(new Card(values[i], suites[j]));
+    for (let i = 0; i < this.values.length; i++) {
+      for (let j = 0; j < this.suites.length; j++) {
+        this.deckList.push(new Card(this.values[i], this.suites[j]));
       }
     }
   }
@@ -212,26 +212,9 @@ class Deck {
 
   // - Reset the deck if we run low on cards
   remake() {
-    let suites = ["S", "J", "D", "H"];
-    let values = [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7",
-      "8",
-      "9",
-      "10",
-      "J",
-      "Q",
-      "K",
-      "A",
-    ];
-    for (let i = 0; i < values.length; i++) {
-      for (let j = 0; j < suites.length; j++) {
-        this.deckList.push(new Card(values[i], suites[j]));
+    for (let i = 0; i < this.values.length; i++) {
+      for (let j = 0; j < this.suites.length; j++) {
+        this.deckList.push(new Card(this.values[i], this.suites[j]));
       }
     }
   }
