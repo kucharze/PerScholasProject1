@@ -8,6 +8,7 @@ class Player {
     this.hand = [new Card("8", "h")];
     this.deck = deck;
     this.pile = pile;
+    this.pickingSuite = false;
   }
 
   //Functions
@@ -32,17 +33,20 @@ class Player {
         return "Error can't find card";
       }
 
+      //We picked an 8
       if (value === "8") {
+        //Variable to signal picking a suite and we can't proceed??
         //Reveak suite picker and do not process further
         //Disable card pick logic
         document.querySelector(".suitePicker").style = "display: block";
-        return "is an 8";
+        return false;
       }
-
-      return playCard;
+      console.log(playCard);
+      this.pile.topCard;
+      return true;
     } else {
       alert("Illegal move");
-      return "Illegal move";
+      return false;
     }
   }
 
@@ -250,8 +254,20 @@ class CardPile {
   //Set suite - Change the suite
   //Set value - Change the value
   //Add card to deck
-  // Place a card on top of the deck and set suite and value
-  // --Time allows, add animations
+  addCard(card, update) {
+    // Place a card on top of the deck and set suite and value
+    // --Time allows, add animations
+    this.topCard = card;
+
+    this.value = card.value;
+
+    if (update) {
+      this.suite = card.suite;
+    }
+  }
+
+  //display the card on top of the deck
+  displayCard() {}
 }
 
 //Game loop functions and parameters
