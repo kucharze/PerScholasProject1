@@ -82,11 +82,10 @@ class Player {
         console.log("You clicked me");
         console.log(e.target.getAttribute("value"));
         console.log(e.target.getAttribute("suite"));
-        console.log(
-          this.playCard(
-            e.target.getAttribute("value"),
-            e.target.getAttribute("suite")
-          )
+
+        processTurns(
+          e.target.getAttribute("value"),
+          e.target.getAttribute("suite")
         );
       });
       handspace.append(back);
@@ -267,11 +266,13 @@ let player = new Player(deck, pile);
 // console.log(deck.deckList);
 
 //Take turns
-const processTurns = () => {
+const processTurns = (value, suite) => {
   // - Run through the player's turn
   // - If turn processed check if they won (0 cards in hand)
   // - If the player properly processed their turn, or has not won yet, go to Computer turn
   // - Check if computer won (0 cards ), if not, process logic and get ready for another round
+  console.log("Processing turns");
+  console.log(player.playCard(value, suite));
 };
 
 const chooseSuite = (suite) => {
