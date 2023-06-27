@@ -245,7 +245,7 @@ class CardPile {
   // - The top card
 
   constructor(top) {
-    this.topCard = this.top;
+    this.topCard = top;
     this.suite = top.suite;
     this.value = top.value;
   }
@@ -274,7 +274,13 @@ class CardPile {
   }
 
   //display the card on top of the deck
-  displayCard() {}
+  displayCard() {
+    let pile = document.querySelector(".pile");
+
+    pile.setAttribute("src", this.topCard.image);
+
+    let item = document.cre;
+  }
 }
 
 //Game loop functions and parameters
@@ -323,6 +329,8 @@ const startUp = () => {
     player.hand.push(deck.dealACard());
   }
   player.displayHand();
+
+  pile.displayCard();
 };
 
 //Restart function
