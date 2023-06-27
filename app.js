@@ -5,7 +5,7 @@ class Player {
   // - The card pile to reference top card and suite
 
   constructor(deck, pile) {
-    this.hand = [];
+    this.hand = [new Card("8", "h")];
     this.deck = deck;
     this.pile = pile;
   }
@@ -19,22 +19,23 @@ class Player {
   // - If legal to play play it
   // - if not get an alert that you can't play it
   // - If 8 show a screen to change the suite settings
-  playCard(card) {
-    if (
-      card.value === this.pile.card.value ||
-      card.suite === this.pile.card.suite
-    ) {
-      this.removeCard(card);
+  playCard(value, suite) {
+    if (value === this.pile.value || suite === this.pile.suite) {
+      let playCard = this.removeCard(value, suite);
+
+      if (playCard === undefined) {
+        return "Error can't find card";
+      }
+      return playCard;
+    } else {
+      return "Illegal move";
     }
   }
 
   //Remove a card from our hand
-  removeCard(card) {
+  removeCard(value, suite) {
     for (let i = 0; i < this.hand.length; i++) {
-      if (
-        card.value === this.hand[i].value &&
-        card.suite === this.hand[i].suite
-      ) {
+      if (value === this.hand[i].value && suite === this.hand[i].suite) {
         return this.hand.splice(i, 1);
       }
     }
@@ -44,7 +45,7 @@ class Player {
   // - Show the picture for each card
   // - If time allows, add animations
   displayHand() {
-    console.log(this.hand);
+    //console.log(this.hand);
 
     let handspace = document.querySelector(".player");
     handspace.replaceChildren();
@@ -99,7 +100,8 @@ class Computer {
   // --Simply show card backs
   // -- If time allows show animations
   displayHand() {
-    console.log(this.hand);
+    //console.log(this.hand);
+
     let handspace = document.querySelector(".computer");
     handspace.replaceChildren();
     for (let i = 0; i < this.hand.length; i++) {
@@ -195,7 +197,7 @@ class CardPile {
 
 //Game loop functions and parameters
 let deck = new Deck();
-let pile = new CardPile(deck.dealACard());
+let pile = new CardPile(new Card("8", "h"));
 
 let com = new Computer(deck, pile);
 let player = new Player(deck, pile);
@@ -239,3 +241,5 @@ const restart = () => {
 };
 
 startUp();
+
+console.log(player.playCard("3", "c"));
