@@ -19,7 +19,19 @@ class Player {
   // - If legal to play play it
   // - if not get an alert that you can't play it
   // - If 8 show a screen to change the suite settings
-  playCard(card) {}
+  playCard(card) {
+    if (
+      card.value === this.pile.card.value ||
+      card.suite === this.pile.card.suite
+    ) {
+      this.removeCard(card);
+    }
+  }
+
+  //Remove a card from our hand
+  removeCard(card) {
+    for (let i = 0; i < this.hand.length; i++) {}
+  }
 
   //Display cards to screen
   // - Show the picture for each card
