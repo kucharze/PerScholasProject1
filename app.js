@@ -54,6 +54,9 @@ class Player {
       let back = document.createElement("img");
       back.setAttribute("src", "Images/cardbackred.png");
       back.setAttribute("class", "playerHand");
+      back.addEventListener("click", () => {
+        console.log("You clicked me");
+      });
       handspace.append(back);
     }
   }
