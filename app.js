@@ -20,7 +20,12 @@ class Player {
   // - if not get an alert that you can't play it
   // - If 8 show a screen to change the suite settings
   playCard(value, suite) {
-    if (value === this.pile.value || suite === this.pile.suite) {
+    console.log("Playing card");
+    if (
+      value === this.pile.value ||
+      value === "8" ||
+      suite === this.pile.suite
+    ) {
       let playCard = this.removeCard(value, suite);
 
       if (playCard === undefined) {
@@ -30,11 +35,13 @@ class Player {
       if (value === "8") {
         //Reveak suite picker and do not process further
         //Disable card pick logic
+        document.querySelector(".suitePicker").style = "display: block";
         return "is an 8";
       }
 
       return playCard;
     } else {
+      alert("Illegal move");
       return "Illegal move";
     }
   }
@@ -67,13 +74,19 @@ class Player {
       let back = document.createElement("img");
       back.setAttribute("src", "Images/cardbackred.png");
       back.setAttribute("class", "playerHand");
-      back.setAttribute("title", "playerHand");
-      back.setAttribute("value", "The");
-      back.setAttribute("suite", "player");
+      back.setAttribute("value", this.hand[i].value);
+      back.setAttribute("suite", this.hand[i].suite);
       back.addEventListener("click", (e) => {
         //https://stackoverflow.com/questions/58435999/grab-dom-attribute-on-event-target
         console.log("You clicked me");
-        console.log(e.target.getAttribute("hand"));
+        console.log(e.target.getAttribute("value"));
+        console.log(e.target.getAttribute("suite"));
+        console.log(
+          this.playCard(
+            e.target.getAttribute("value"),
+            e.target.getAttribute("suite")
+          )
+        );
       });
       handspace.append(back);
     }
@@ -242,7 +255,7 @@ class CardPile {
 
 //Game loop functions and parameters
 let deck = new Deck();
-let pile = new CardPile(new Card("8", "h"));
+let pile = new CardPile(new Card("3", "h"));
 
 let com = new Computer(deck, pile);
 let player = new Player(deck, pile);
@@ -287,5 +300,5 @@ const restart = () => {
 
 startUp();
 
-console.log(player.playCard("8", "h"));
+// console.log(player.playCard("8", "h"));
 console.log(player.hand);
