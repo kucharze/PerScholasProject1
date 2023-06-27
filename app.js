@@ -78,7 +78,7 @@ class Player {
 
     for (let i = 0; i < this.hand.length; i++) {
       let back = document.createElement("img");
-      back.setAttribute("src", "Images/cardbackred.png");
+      back.setAttribute("src", this.hand[i].image);
       back.setAttribute("class", "playerHand");
       back.setAttribute("value", this.hand[i].value);
       back.setAttribute("suite", this.hand[i].suite);
@@ -166,7 +166,7 @@ class Card {
     this.suite = suite;
     this.value = value;
     //Will pick out image based on suite and value
-    this.image = "";
+    this.image = "Images/" + this.value + this.suite + ".png";
   }
 }
 
@@ -178,7 +178,7 @@ class Deck {
   constructor() {
     this.deckList = [];
 
-    let suites = ["S", "J", "D", "H"];
+    let suites = ["s", "c", "d", "h"];
     let values = [
       "1",
       "2",
