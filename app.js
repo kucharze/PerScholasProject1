@@ -55,8 +55,8 @@ class Player {
   removeCard(value, suite) {
     for (let i = 0; i < this.hand.length; i++) {
       if (value === this.hand[i].value && suite === this.hand[i].suite) {
-        // return this.hand.splice(i, 1);
-        return this.hand[i];
+        return this.hand.splice(i, 1);
+        // return this.hand[i];
       }
     }
   }
@@ -304,6 +304,9 @@ const processTurns = (value, suite) => {
   if (player.playCard(value, suite)) {
     com.playCard();
   }
+
+  pile.displayCard();
+  player.displayHand();
 };
 
 const chooseSuite = (suite) => {
