@@ -11,40 +11,42 @@
   </head>
   <body>
     <!--Title-->
-    <h1>Crazy Eights</h1>
-    <!--Computer players hand-->
-    <div class="computerSpace">
-      <h2>Computer</h2>
-      <div class="computer"></div>
-    </div>
+    <div class="playArea">
+      <h1>Crazy Eights</h1>
+      <!--Computer players hand-->
+      <div class="computerSpace">
+        <h2>Computer</h2>
+        <div class="computer"></div>
+      </div>
 
-    <!--Dealer table-->
-    <div class="mainTable">
-      <h2>Main table</h2>
-      <!-- --Deck -->
-      <div class="deckSpace">
-        <img src="Images/cardbackred.png" alt="" class="deck" />
+      <!--Dealer table-->
+      <div class="mainTable">
+        <h2>Main table</h2>
+        <!-- --Deck -->
+        <div class="deckSpace">
+          <img src="Images/cardbackred.png" alt="" class="deck" />
+        </div>
+        <!-- --Card pile-->
+        <div class="cardPile">
+          <img src="Images/cardbackred.png" alt="" class="pile" />
+        </div>
+        <!-- --Suite picker for when an 8 is played-->
+        <div class="suitePicker">
+          <h2>Select a suite</h2>
+          <!-- ----Buttons for Clubs, spades, diamonds, and hearts-->
+          <button class="clubs">Clubs</button>
+          <button class="spades">Spades</button>
+          <button class="diamonds">diamonds</button>
+          <button class="hearts">Hearts</button>
+        </div>
+        <!--Display for deciding to play a new game if the current game ended-->
       </div>
-      <!-- --Card pile-->
-      <div class="cardPile">
-        <img src="Images/cardbackred.png" alt="" class="pile" />
-      </div>
-      <!-- --Suite picker for when an 8 is played-->
-      <div class="suitePicker">
-        <h2>Select a suite</h2>
-        <!-- ----Buttons for Clubs, spades, diamonds, and hearts-->
-        <button class="clubs">Clubs</button>
-        <button class="spades">Spades</button>
-        <button class="diamonds">diamonds</button>
-        <button class="hearts">Hearts</button>
-      </div>
-      <!--Display for deciding to play a new game if the current game ended-->
-    </div>
 
-    <!--Player hand-->
-    <div class="playerSpace">
-      <h2>Player 1</h2>
-      <div class="player"></div>
+      <!--Player hand-->
+      <div class="playerSpace">
+        <h2>Player 1</h2>
+        <div class="player"></div>
+      </div>
     </div>
 
     <script src="app.js" async defer></script>
