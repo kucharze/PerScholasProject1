@@ -50,7 +50,8 @@ class Player {
   removeCard(value, suite) {
     for (let i = 0; i < this.hand.length; i++) {
       if (value === this.hand[i].value && suite === this.hand[i].suite) {
-        return this.hand.splice(i, 1);
+        // return this.hand.splice(i, 1);
+        return this.hand[i];
       }
     }
   }
@@ -126,6 +127,7 @@ class Computer {
         card.suite === this.hand[i].suite
       ) {
         return this.hand.splice(i, 1);
+        // return this.hand[i];
       }
     }
   }
@@ -277,6 +279,9 @@ const chooseSuite = (suite) => {
   //Call pile set suit
   //Set pile value to 8
   //Let the computer have a turn
+  console.log(suite);
+
+  document.querySelector(".suitePicker").style = "display:none";
 };
 
 //Startup function
