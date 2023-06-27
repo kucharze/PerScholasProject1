@@ -121,7 +121,9 @@ class Computer {
   // ----- For simplicty if 8 is played keep suite as the suite of the 8
   // --------- If time allows create logic to change suite for computer accodingly
   //--Draw a card if it can't find a card to play
-  playCard(card) {}
+  playCard() {
+    console.log("The computer's turn to play");
+  }
 
   //Remove a card from our hand
   removeCard(card) {
@@ -291,7 +293,9 @@ const processTurns = (value, suite) => {
   // - If the player properly processed their turn, or has not won yet, go to Computer turn
   // - Check if computer won (0 cards ), if not, process logic and get ready for another round
   console.log("Processing turns");
-  console.log(player.playCard(value, suite));
+  if (player.playCard(value, suite)) {
+    com.playCard();
+  }
 };
 
 const chooseSuite = (suite) => {
