@@ -292,6 +292,16 @@ const processTurns = (value, suite) => {
   player.displayHand();
 };
 
+//Draw a card
+const drawCard = () => {
+  console.log("Drawing a card");
+  player.hand.push(deck.dealACard());
+  player.displayHand();
+
+  com.playCard();
+  console.log(player.hand);
+};
+
 const chooseSuite = (suite) => {
   //Choose a suite to pass in
   //Call pile set suit
