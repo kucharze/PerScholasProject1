@@ -132,16 +132,19 @@ class Computer {
         this.hand[i].suite === this.pile.suite
       ) {
         //Remove the card
-        cardPlay = this.hand[i].splice(i, 1)[0];
+        cardPlay = this.hand.splice(i, 1)[0];
+        break;
       }
     }
     if (cardPlay != null) {
       console.log("Computer is playing a card");
       console.log(cardPlay);
-      return cardPlay;
+      this.pile.addCard(cardPlay);
+      //return cardPlay;
     } else {
       console.log("Computer is drawing");
     }
+    this.displayHand();
   }
 
   //Display cards to screen
@@ -259,12 +262,13 @@ class CardPile {
     if (update) {
       this.suite = card.suite;
     }
-    console.log(card);
+    //console.log(card);
     console.log("Adding a card", this.topCard, this.suite, this.value);
   }
 
   //display the card on top of the deck
   displayCard() {
+    console.log("Pile top card", this.topCard);
     let pile = document.querySelector(".pile");
 
     pile.setAttribute("src", this.topCard.image);
