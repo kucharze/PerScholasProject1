@@ -55,7 +55,7 @@ class Player {
   removeCard(value, suite) {
     for (let i = 0; i < this.hand.length; i++) {
       if (value === this.hand[i].value && suite === this.hand[i].suite) {
-        return this.hand.splice(i, 1);
+        return this.hand.splice(i, 1)[0];
         // return this.hand[i];
       }
     }
@@ -154,7 +154,8 @@ class Computer {
     handspace.replaceChildren();
     for (let i = 0; i < this.hand.length; i++) {
       let back = document.createElement("img");
-      back.setAttribute("src", "Images/cardbackred.png");
+      //   back.setAttribute("src", "Images/cardbackred.png");
+      back.setAttribute("src", this.hand[i].image);
       back.setAttribute("class", "comHand");
       handspace.append(back);
     }
@@ -258,8 +259,8 @@ class CardPile {
     if (update) {
       this.suite = card.suite;
     }
-
-    console.log(this.topCard, this.suite, this.value);
+    console.log(card);
+    console.log("Adding a card", this.topCard, this.suite, this.value);
   }
 
   //display the card on top of the deck
@@ -317,6 +318,7 @@ const chooseSuite = (suite) => {
 
   document.querySelector(".suitePicker").style = "display:none";
   pile.setSuite(suite);
+  com.playCard();
 };
 
 //Startup function
