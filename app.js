@@ -123,18 +123,24 @@ class Computer {
   //--Draw a card if it can't find a card to play
   playCard() {
     console.log("The computer's turn to play");
-  }
-
-  //Remove a card from our hand
-  removeCard(card) {
+    let canPlay = false;
+    let cardPlay = null;
     for (let i = 0; i < this.hand.length; i++) {
       if (
-        card.value === this.hand[i].value &&
-        card.suite === this.hand[i].suite
+        this.hand[i].value === this.pile.value ||
+        this.hand[i].value === "8" ||
+        this.hand[i].suite === this.pile.suite
       ) {
-        return this.hand.splice(i, 1);
-        // return this.hand[i];
+        //Remove the card
+        cardPlay = this.hand[i].splice(i, 1)[0];
       }
+    }
+    if (cardPlay != null) {
+      console.log("Computer is playing a card");
+      console.log(cardPlay);
+      return cardPlay;
+    } else {
+      console.log("Computer is drawing");
     }
   }
 
