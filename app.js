@@ -42,6 +42,7 @@ class Player {
           //Disable card pick logic
           document.querySelector(".suitePicker").style = "display: block";
           this.pile.addCard(playCard, false);
+          this.canPlay = false;
           return false;
         }
         console.log(playCard);
@@ -301,6 +302,8 @@ const winner = (inner) => {
   space.style = "display:block";
 
   win.innerHTML = inner;
+
+  player.canPlay = false;
 };
 //Take turns
 const processTurns = (value, suite) => {
@@ -352,6 +355,7 @@ const chooseSuite = (suite) => {
 
   document.querySelector(".suitePicker").style = "display:none";
   pile.setSuite(suite);
+  player.canPlay = true;
   if (player.hand.length === 0) {
     console.log("Player wins");
     winner("Congradulations!! You win");
@@ -391,6 +395,8 @@ const restart = () => {
   let space = document.querySelector(".playAgain");
 
   space.style = "display:none";
+
+  player.canPlay = true;
 
   startUp();
 };
