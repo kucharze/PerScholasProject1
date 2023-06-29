@@ -133,6 +133,19 @@ class Computer {
         spades++;
       }
     }
+
+    if (diamonds >= heart && diamonds >= spades && diamonds >= clubs) {
+      return "d";
+    }
+    if (heart >= heart && heart >= spades && heart >= clubs) {
+      return "h";
+    }
+    if (clubs >= heart && clubs >= spades && clubs >= diamonds) {
+      return "c";
+    }
+    if (spades >= heart && spades >= spades && spades >= clubs) {
+      return "s";
+    }
   }
 
   //Play a card from hand
