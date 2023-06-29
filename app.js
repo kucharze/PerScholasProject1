@@ -243,6 +243,8 @@ class CardPile {
     this.topCard = top;
     this.suite = top.suite;
     this.value = top.value;
+    document.querySelector(".curSuite").innerHTML =
+      "Current Suite: " + this.suite;
   }
 
   //Functions
@@ -250,6 +252,8 @@ class CardPile {
   setSuite(suite) {
     this.suite = suite;
     console.log(this.topCard, this.suite, this.value);
+    document.querySelector(".curSuite").innerHTML =
+      "Current Suite: " + this.suite;
   }
   //Add card to deck
   addCard(card, update) {
@@ -264,6 +268,8 @@ class CardPile {
     if (update) {
       this.suite = card.suite;
     }
+    document.querySelector(".curSuite").innerHTML =
+      "Current Suite: " + this.suite;
     //console.log(card);
     console.log("Adding a card", this.topCard, this.suite, this.value);
   }
