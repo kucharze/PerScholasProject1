@@ -9,10 +9,11 @@
   font-size: 30px;
 }
 body {
-  background-color: lightblue;
+  background-color: rgb(78, 180, 214);
+  /* color: goldenrod; */
 }
 .mark {
-  background-color: yellow;
+  background-color: darkgoldenrod;
   width: 250;
   border: solid;
   direction: "left";
@@ -36,6 +37,7 @@ body {
 }
 .deck {
   height: 200px;
+  margin-left: 20px;
 }
 .pile {
   height: 200px;
