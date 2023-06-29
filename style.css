@@ -8,6 +8,9 @@
   border: solid blue;
   font-size: 30px;
 }
+body {
+  background-color: lightblue;
+}
 .suites {
   font-size: 30px;
   height: 70px;
@@ -34,11 +37,11 @@
   justify-content: center;
 }
 .computerSpace {
-  border-bottom: solid black;
+  border-bottom: solid rgb(16, 62, 188);
   /* margin-bottom: 20px; */
 }
 .playerSpace {
-  border-top: solid black;
+  border-top: solid rgb(16, 62, 188);
   margin-top: 20px;
 }
 .playArea {
