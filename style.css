@@ -28,6 +28,9 @@
 }
 .playAgain {
   margin-left: 40px;
+  display: none;
 }
 .new {
+  font-size: 20px;
+  margin-left: 30px;
 }
