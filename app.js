@@ -45,7 +45,6 @@ class Player {
           this.canPlay = false;
           return false;
         }
-        console.log(playCard);
         this.pile.addCard(playCard, true);
         return true;
       } else {
@@ -71,7 +70,7 @@ class Player {
   // - Show the picture for each card
   // - If time allows, add animations
   displayHand() {
-    console.log("Player hand", this.hand);
+    // console.log("Player hand", this.hand);
 
     let handspace = document.querySelector(".player");
     handspace.replaceChildren();
@@ -84,9 +83,6 @@ class Player {
       back.setAttribute("suite", this.hand[i].suite);
       back.addEventListener("click", (e) => {
         //https://stackoverflow.com/questions/58435999/grab-dom-attribute-on-event-target
-        console.log("You clicked me");
-        console.log(e.target.getAttribute("value"));
-        console.log(e.target.getAttribute("suite"));
 
         processTurns(
           e.target.getAttribute("value"),
@@ -176,7 +172,7 @@ class Computer {
   // --Simply show card backs
   // -- If time allows show animations
   displayHand() {
-    console.log("Com hand", this.hand);
+    // console.log("Com hand", this.hand);
 
     let handspace = document.querySelector(".computer");
     handspace.replaceChildren();
@@ -279,7 +275,7 @@ class CardPile {
   //Set suite - Change the suite
   setSuite(suite) {
     this.suite = suite;
-    console.log(this.topCard, this.suite, this.value);
+    // console.log(this.topCard, this.suite, this.value);
     this.setSuiteDisplay();
   }
 
@@ -319,7 +315,7 @@ class CardPile {
     }
     this.setSuiteDisplay();
     //console.log(card);
-    console.log("Adding a card", this.topCard, this.suite, this.value);
+    // console.log("Adding a card", this.topCard, this.suite, this.value);
   }
 
   //display the card on top of the deck
@@ -339,8 +335,6 @@ let pile = new CardPile(deck.dealACard());
 
 let com = new Computer(deck, pile);
 let player = new Player(deck, pile);
-
-// com.displayHand();
 
 // console.log(deck.deckList);
 
@@ -386,7 +380,6 @@ const drawCard = () => {
   player.displayHand();
 
   com.playCard();
-  console.log(player.hand);
 
   pile.displayCard();
   com.displayHand();
@@ -400,7 +393,6 @@ const chooseSuite = (suite) => {
   //Call pile set suit
   //Set pile value to 8
   //Let the computer have a turn
-  console.log(suite);
 
   document.querySelector(".suitePicker").style = "display:none";
   pile.setSuite(suite);
@@ -451,6 +443,3 @@ const restart = () => {
 };
 
 startUp();
-
-// console.log(player.playCard("8", "h"));
-console.log(player.hand);
