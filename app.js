@@ -9,6 +9,7 @@ class Player {
     this.deck = deck;
     this.pile = pile;
     this.pickingSuite = false;
+    this.canPlay = true; //If we are allowed to play --- To prevent issues
   }
 
   //Functions
@@ -22,32 +23,36 @@ class Player {
   // - If 8 show a screen to change the suite settings
   playCard(value, suite) {
     console.log("Playing card");
-    if (
-      value === this.pile.value ||
-      value === "8" ||
-      suite === this.pile.suite
-    ) {
-      let playCard = this.removeCard(value, suite);
+    if (this.canPlay) {
+      if (
+        value === this.pile.value ||
+        value === "8" ||
+        suite === this.pile.suite
+      ) {
+        let playCard = this.removeCard(value, suite);
 
-      if (playCard === undefined) {
-        return "Error can't find card";
-      }
+        if (playCard === undefined) {
+          return "Error can't find card";
+        }
 
-      //We picked an 8
-      if (value === "8") {
-        //Variable to signal picking a suite and we can't proceed??
-        //Reveak suite picker and do not process further
-        //Disable card pick logic
-        document.querySelector(".suitePicker").style = "display: block";
-        this.pile.addCard(playCard, false);
+        //We picked an 8
+        if (value === "8") {
+          //Variable to signal picking a suite and we can't proceed??
+          //Reveak suite picker and do not process further
+          //Disable card pick logic
+          document.querySelector(".suitePicker").style = "display: block";
+          this.pile.addCard(playCard, false);
+          return false;
+        }
+        console.log(playCard);
+        this.pile.addCard(playCard, true);
+        return true;
+      } else {
+        alert("Illegal move");
         return false;
       }
-      console.log(playCard);
-      this.pile.addCard(playCard, true);
-      return true;
     } else {
-      alert("Illegal move");
-      return false;
+      alert("You must complete a different action at this time");
     }
   }
 
@@ -60,12 +65,6 @@ class Player {
       }
     }
   }
-
-  //Enable hand events
-  disableHand() {}
-
-  //disable hand events
-  enableHands() {}
 
   //Display cards to screen
   // - Show the picture for each card
