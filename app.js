@@ -286,7 +286,7 @@ class CardPile {
 
 //Game loop functions and parameters
 let deck = new Deck();
-let pile = new CardPile(new Card("3", "h"));
+let pile = new CardPile(deck.dealACard());
 
 let com = new Computer(deck, pile);
 let player = new Player(deck, pile);
@@ -384,7 +384,7 @@ const restart = () => {
 
   //Game loop functions and parameters
   deck = new Deck();
-  pile = new CardPile(new Card("3", "h"));
+  pile = new CardPile(deck.dealACard());
 
   com = new Computer(deck, pile);
   player = new Player(deck, pile);
