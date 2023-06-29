@@ -205,7 +205,6 @@ class Deck {
       "J",
       "Q",
       "K",
-      "A",
     ];
     for (let i = 0; i < this.values.length; i++) {
       for (let j = 0; j < this.suites.length; j++) {
@@ -296,6 +295,14 @@ let player = new Player(deck, pile);
 
 // console.log(deck.deckList);
 
+//There is a winner
+const winner = (inner) => {
+  let win = document.querySelector(".Winner");
+  let space = document.querySelector(".playAgain");
+  space.style = "display:block";
+
+  win.innerHTML = inner;
+};
 //Take turns
 const processTurns = (value, suite) => {
   // - Run through the player's turn
@@ -308,7 +315,7 @@ const processTurns = (value, suite) => {
   if (player.playCard(value, suite)) {
     if (player.hand.length === 0) {
       console.log("Player wins");
-      win.innerHTML = "Congradulations!! You win";
+      winner("Congradulations!! You win");
     } else {
       com.playCard();
     }
@@ -317,7 +324,7 @@ const processTurns = (value, suite) => {
   pile.displayCard();
   player.displayHand();
   if (com.hand.length === 0) {
-    win.innerHTML = "Sorry, you lose";
+    winner("Sorry, you lose");
   }
 };
 
@@ -333,7 +340,7 @@ const drawCard = () => {
   pile.displayCard();
   com.displayHand();
   if (com.hand.length === 0) {
-    win.innerHTML = "Sorry, you lose";
+    winner("Sorry, you lose");
   }
 };
 
@@ -346,7 +353,12 @@ const chooseSuite = (suite) => {
 
   document.querySelector(".suitePicker").style = "display:none";
   pile.setSuite(suite);
-  com.playCard();
+  if (player.hand.length === 0) {
+    console.log("Player wins");
+    winner("Congradulations!! You win");
+  } else {
+    com.playCard();
+  }
 };
 
 //Startup function
@@ -376,6 +388,9 @@ const restart = () => {
 
   com = new Computer(deck, pile);
   player = new Player(deck, pile);
+
+  let win = document.querySelector(".Winner");
+  let space = document.querySelector(".playAgain");
 
   startUp();
 };
