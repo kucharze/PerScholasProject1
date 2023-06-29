@@ -11,6 +11,12 @@
 body {
   background-color: lightblue;
 }
+.mark {
+  background-color: yellow;
+  width: "250";
+  border: solid;
+  direction: "left";
+}
 .suites {
   font-size: 30px;
   height: 70px;
