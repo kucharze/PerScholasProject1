@@ -13,10 +13,10 @@ body {
   /* color: goldenrod; */
 }
 .mark {
-  background-color: darkgoldenrod;
+  background-color: rgb(8, 134, 34);
   width: 250;
-  border: solid;
-  direction: "left";
+  border: solid green;
+  direction: left;
 }
 .suites {
   font-size: 30px;
