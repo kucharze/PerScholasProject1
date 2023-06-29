@@ -143,6 +143,7 @@ class Computer {
       //return cardPlay;
     } else {
       console.log("Computer is drawing");
+      this.hand.push(this.deck.dealACard());
     }
     this.displayHand();
     this.pile.displayCard();
@@ -324,7 +325,7 @@ const drawCard = () => {
   console.log(player.hand);
 
   pile.displayCard();
-  player.displayHand();
+  com.displayHand();
   if (com.hand.length === 0) {
     win.innerHTML = "Sorry, you lose";
   }
