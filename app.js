@@ -71,7 +71,7 @@ class Player {
   // - Show the picture for each card
   // - If time allows, add animations
   displayHand() {
-    //console.log(this.hand);
+    console.log("Player hand", this.hand);
 
     let handspace = document.querySelector(".player");
     handspace.replaceChildren();
@@ -139,7 +139,7 @@ class Computer {
     if (cardPlay != null) {
       console.log("Computer is playing a card");
       console.log(cardPlay);
-      this.pile.addCard(cardPlay);
+      this.pile.addCard(cardPlay, true);
       //return cardPlay;
     } else {
       console.log("Computer is drawing");
@@ -151,7 +151,7 @@ class Computer {
   // --Simply show card backs
   // -- If time allows show animations
   displayHand() {
-    //console.log(this.hand);
+    console.log("Com hand", this.hand);
 
     let handspace = document.querySelector(".computer");
     handspace.replaceChildren();
@@ -321,6 +321,12 @@ const drawCard = () => {
 
   com.playCard();
   console.log(player.hand);
+
+  pile.displayCard();
+  player.displayHand();
+  if (com.hand.length === 0) {
+    win.innerHTML = "Sorry, you lose";
+  }
 };
 
 const chooseSuite = (suite) => {
@@ -354,6 +360,7 @@ const startUp = () => {
 //Restart function
 const restart = () => {
   //Clear the board and call startup function to startup a new game
+  console.log("Restarting the game");
 };
 
 startUp();
