@@ -27,10 +27,12 @@ body {
 .comHand {
   height: 200px;
   margin-left: 20px;
+  padding: 10px;
 }
 .playerHand {
   height: 200px;
   margin-left: 20px;
+  padding: 10px;
 }
 .deck {
   height: 200px;
