@@ -363,6 +363,15 @@ const startUp = () => {
 const restart = () => {
   //Clear the board and call startup function to startup a new game
   console.log("Restarting the game");
+
+  //Game loop functions and parameters
+  deck = new Deck();
+  pile = new CardPile(new Card("3", "h"));
+
+  com = new Computer(deck, pile);
+  player = new Player(deck, pile);
+
+  startUp();
 };
 
 startUp();
