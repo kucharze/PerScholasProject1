@@ -5,7 +5,7 @@ class Player {
   // - The card pile to reference top card and suite
 
   constructor(deck, pile) {
-    this.hand = [new Card("8", "h")];
+    this.hand = [];
     this.deck = deck;
     this.pile = pile;
     this.pickingSuite = false;
