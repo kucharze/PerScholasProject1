@@ -33,7 +33,17 @@
   /* margin-left: 500px; */
   justify-content: center;
 }
+.computerSpace {
+  border-bottom: solid black;
+  /* margin-bottom: 20px; */
+}
+.playerSpace {
+  border-top: solid black;
+  margin-top: 20px;
+}
 .playArea {
+  display: flex;
+  flex-direction: column;
   text-align: center;
   align-items: center;
   justify-content: center;
