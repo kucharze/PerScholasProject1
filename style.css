@@ -1,5 +1,6 @@
 .suitePicker {
   display: none;
+  margin-left: 40px;
 }
 .comHand {
   height: 200px;
@@ -24,4 +25,9 @@
 } */
 .logo {
   height: 100px;
+}
+.playAgain {
+  margin-left: 40px;
+}
+.new {
 }
