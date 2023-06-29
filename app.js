@@ -116,6 +116,16 @@ class Computer {
     this.hand.push(this.deck.dealACard());
   }
 
+  //Examine suite for each card to find the best suite to play
+  findBestSuite() {
+    let heart = 0;
+    let spades = 0;
+    let clubs = 0;
+    let diamonds = 0;
+
+    for (let i = 0; i < this.hand.length; i++) {}
+  }
+
   //Play a card from hand
   //--Play the first card available
   // ----- For simplicty if 8 is played keep suite as the suite of the 8
