@@ -1,6 +1,6 @@
 .suitePicker {
-  /* display: none; */
-  margin-left: 40px;
+  display: none;
+  margin-left: 100px;
   text-align: center;
   width: 520px;
   background-color: red;
@@ -29,13 +29,16 @@
 }
 .mainTable {
   display: flex;
+  margin-top: 50px;
+  /* margin-left: 500px; */
+  justify-content: center;
 }
-/* .playArea {
+.playArea {
   text-align: center;
   align-items: center;
   justify-content: center;
   align-content: center;
-} */
+}
 .logo {
   height: 100px;
 }
@@ -46,4 +49,8 @@
 .new {
   font-size: 20px;
   margin-left: 30px;
+}
+
+.curSuite {
+  margin-left: 20px;
 }
