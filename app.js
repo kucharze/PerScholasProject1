@@ -259,8 +259,7 @@ class CardPile {
     this.topCard = top;
     this.suite = top.suite;
     this.value = top.value;
-    document.querySelector(".curSuite").innerHTML =
-      "Current Suite: " + this.getSuiteWord();
+    this.setSuiteDisplay();
   }
 
   //Functions
@@ -268,6 +267,11 @@ class CardPile {
   setSuite(suite) {
     this.suite = suite;
     console.log(this.topCard, this.suite, this.value);
+    this.setSuiteDisplay();
+  }
+
+  //Function for setting the suite display for user
+  setSuiteDisplay() {
     document.querySelector(".curSuite").innerHTML =
       "Current Suite: " + this.getSuiteWord();
   }
@@ -300,8 +304,7 @@ class CardPile {
     if (update) {
       this.suite = card.suite;
     }
-    document.querySelector(".curSuite").innerHTML =
-      "Current Suite: " + this.getSuiteWord();
+    this.setSuiteDisplay();
     //console.log(card);
     console.log("Adding a card", this.topCard, this.suite, this.value);
   }
