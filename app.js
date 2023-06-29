@@ -218,7 +218,14 @@ class Deck {
   dealACard() {
     let spot = Math.floor(Math.random() * (this.deckList.length - 0) + 0);
     //Randomize what position we pick??
-    return this.deckList.splice(spot, 1)[0];
+    let item = this.deckList.splice(spot, 1)[0];
+
+    if (this.deckList.length < 2) {
+      //Remake the deck if we get too low on cards
+      this.remake();
+    }
+
+    return item;
   }
 
   // - Reset the deck if we run low on cards
