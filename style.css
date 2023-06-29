@@ -13,7 +13,7 @@ body {
 }
 .mark {
   background-color: yellow;
-  width: "250";
+  width: 250;
   border: solid;
   direction: "left";
 }
@@ -26,15 +26,18 @@ body {
 }
 .comHand {
   height: 200px;
+  margin-left: 20px;
 }
 .playerHand {
   height: 200px;
+  margin-left: 20px;
 }
 .deck {
   height: 200px;
 }
 .pile {
   height: 200px;
+  margin-left: 20px;
 }
 .mainTable {
   display: flex;
@@ -59,7 +62,8 @@ body {
   align-content: center;
 }
 .logo {
-  height: 100px;
+  height: 150px;
+  margin: 10px;
 }
 .playAgain {
   margin-left: 40px;
