@@ -389,8 +389,9 @@ const restart = () => {
   com = new Computer(deck, pile);
   player = new Player(deck, pile);
 
-  let win = document.querySelector(".Winner");
   let space = document.querySelector(".playAgain");
+
+  space.style = "display:none";
 
   startUp();
 };
