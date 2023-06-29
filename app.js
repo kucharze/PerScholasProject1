@@ -123,7 +123,20 @@ class Computer {
     let clubs = 0;
     let diamonds = 0;
 
-    for (let i = 0; i < this.hand.length; i++) {}
+    for (let i = 0; i < this.hand.length; i++) {
+      if (this.hand[i].suite === "d") {
+        diamonds++;
+      }
+      if (this.hand[i].suite === "c") {
+        clubs++;
+      }
+      if (this.hand[i].suite === "h") {
+        heart++;
+      }
+      if (this.hand[i].suite === "s") {
+        spades++;
+      }
+    }
   }
 
   //Play a card from hand
@@ -148,7 +161,7 @@ class Computer {
     }
     if (cardPlay != null) {
       console.log("Computer is playing a card");
-      console.log(cardPlay);
+
       this.pile.addCard(cardPlay, true);
       //return cardPlay;
     } else {
