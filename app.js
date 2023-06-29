@@ -159,8 +159,8 @@ class Computer {
     handspace.replaceChildren();
     for (let i = 0; i < this.hand.length; i++) {
       let back = document.createElement("img");
-      //   back.setAttribute("src", "Images/cardbackred.png");
-      back.setAttribute("src", this.hand[i].image);
+      back.setAttribute("src", "Images/cardbackred.png");
+      //   back.setAttribute("src", this.hand[i].image);
       back.setAttribute("class", "comHand");
       handspace.append(back);
     }
