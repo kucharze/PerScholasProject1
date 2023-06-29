@@ -260,7 +260,7 @@ class CardPile {
     this.suite = top.suite;
     this.value = top.value;
     document.querySelector(".curSuite").innerHTML =
-      "Current Suite: " + this.suite;
+      "Current Suite: " + this.getSuiteWord();
   }
 
   //Functions
@@ -269,7 +269,23 @@ class CardPile {
     this.suite = suite;
     console.log(this.topCard, this.suite, this.value);
     document.querySelector(".curSuite").innerHTML =
-      "Current Suite: " + this.suite;
+      "Current Suite: " + this.getSuiteWord();
+  }
+
+  //Get the full word for the current suite
+  getSuiteWord() {
+    if (this.suite === "d") {
+      return "♦️ Diamonds";
+    }
+    if (this.suite === "c") {
+      return "♣️ Clubs";
+    }
+    if (this.suite === "h") {
+      return "🧡 Hearts";
+    }
+    if (this.suite === "s") {
+      return "♠️ Spades";
+    }
   }
   //Add card to deck
   addCard(card, update) {
@@ -285,7 +301,7 @@ class CardPile {
       this.suite = card.suite;
     }
     document.querySelector(".curSuite").innerHTML =
-      "Current Suite: " + this.suite;
+      "Current Suite: " + this.getSuiteWord();
     //console.log(card);
     console.log("Adding a card", this.topCard, this.suite, this.value);
   }
