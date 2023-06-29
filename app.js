@@ -294,13 +294,23 @@ const processTurns = (value, suite) => {
   // - If turn processed check if they won (0 cards in hand)
   // - If the player properly processed their turn, or has not won yet, go to Computer turn
   // - Check if computer won (0 cards ), if not, process logic and get ready for another round
+
+  let win = document.querySelector(".Winner");
   console.log("Processing turns");
   if (player.playCard(value, suite)) {
-    com.playCard();
+    if (player.hand.length === 0) {
+      console.log("Player wins");
+      win.innerHTML = "Congradulations!! You win";
+    } else {
+      com.playCard();
+    }
   }
 
   pile.displayCard();
   player.displayHand();
+  if (com.hand.length === 0) {
+    win.innerHTML = "Sorry, you lose";
+  }
 };
 
 //Draw a card
