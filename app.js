@@ -145,6 +145,7 @@ class Computer {
       console.log("Computer is drawing");
     }
     this.displayHand();
+    this.pile.displayCard();
   }
 
   //Display cards to screen
