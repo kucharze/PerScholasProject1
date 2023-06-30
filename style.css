@@ -1,19 +1,21 @@
 .suitePicker {
-  display: none;
+  /* display: none; */
   margin-left: 100px;
   text-align: center;
-  width: 520px;
-  background-color: red;
+  width: 480px;
+  background-color: rgb(206, 27, 27);
   color: white;
   border: solid blue;
-  font-size: 30px;
+  font-size: 25px;
 }
 .suites {
-  font-size: 30px;
-  height: 70px;
+  font-size: 20px;
+  height: 50px;
+  /* width: 80px; */
   margin-bottom: 20px;
   margin-right: 20px;
-  padding: 20px;
+  margin-left: 20px;
+  padding: 10px;
 }
 body {
   background-color: rgb(13, 113, 195);
@@ -29,6 +31,9 @@ body {
   width: 250;
   border: solid green;
   direction: left;
+}
+.text {
+  margin-right: 20px;
 }
 
 .comHand {
@@ -135,21 +140,23 @@ body {
     margin-top: 10px;
   }
   .suitePicker {
-    display: none;
-    /* margin-left: 100px; */
+    /* display: none; */
+    margin-top: 30px;
     text-align: center;
-    width: 460px;
-    background-color: red;
+    width: 400px;
+    background-color: rgb(206, 27, 27);
     color: white;
     border: solid blue;
-    font-size: 25px;
+    font-size: 20px;
   }
   .suites {
-    font-size: 25px;
-    height: 65px;
-    margin-bottom: 10px;
-    margin-right: 15px;
-    padding: 20px;
+    font-size: 20px;
+    height: 50px;
+    /* width: 80px; */
+    margin-bottom: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 10px;
   }
   .playAgain {
     margin-left: 100px;
