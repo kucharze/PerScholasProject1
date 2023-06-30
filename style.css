@@ -8,6 +8,13 @@
   border: solid blue;
   font-size: 30px;
 }
+.suites {
+  font-size: 30px;
+  height: 70px;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  padding: 20px;
+}
 body {
   background-color: rgb(13, 113, 195);
   /* color: rgb(202, 111, 26); */
@@ -23,13 +30,7 @@ body {
   border: solid green;
   direction: left;
 }
-.suites {
-  font-size: 30px;
-  height: 70px;
-  margin-bottom: 10px;
-  margin-right: 20px;
-  padding: 20px;
-}
+
 .comHand {
   height: 200px;
   margin-left: 20px;
@@ -43,6 +44,7 @@ body {
 .deck {
   height: 200px;
   margin-left: 20px;
+  margin-right: 20px;
 }
 .pile {
   height: 200px;
@@ -70,14 +72,18 @@ body {
 }
 
 .playAgain {
-  margin-left: 40px;
-  display: none;
+  margin-left: 100px;
+  /* display: none; */
+  background-color: red;
+  border: green solid;
+  color: white;
+  width: 500px;
 }
 .new {
-  font-size: 20px;
-  margin-left: 30px;
+  height: 100px;
+  font-size: 60px;
+  margin-bottom: 30px;
 }
-
 .curSuite {
   margin-left: 20px;
 }
@@ -88,5 +94,49 @@ body {
     margin-top: 50px;
     justify-content: center;
     flex-direction: column;
+  }
+  .playerSpace {
+    border-top: solid rgb(16, 62, 188);
+    margin-top: 20px;
+    width: 700px;
+  }
+  .computerSpace {
+    border-bottom: solid rgb(16, 62, 188);
+    width: 700px;
+  }
+  .comHand {
+    height: 150px;
+    margin-left: 10px;
+    padding: 10px;
+  }
+  .playerHand {
+    height: 140px;
+    margin-left: 10px;
+    padding: 10px;
+  }
+  .deck {
+    height: 150px;
+    /* margin-left: 20px; */
+  }
+  .pile {
+    height: 140px;
+    margin-top: 10px;
+  }
+  .suitePicker {
+    display: none;
+    /* margin-left: 100px; */
+    text-align: center;
+    width: 460px;
+    background-color: red;
+    color: white;
+    border: solid blue;
+    font-size: 25px;
+  }
+  .suites {
+    font-size: 25px;
+    height: 65px;
+    margin-bottom: 10px;
+    margin-right: 15px;
+    padding: 20px;
   }
 }
