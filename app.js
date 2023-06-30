@@ -184,7 +184,6 @@ class Computer {
       this.hand.push(this.deck.dealACard());
     }
     this.displayHand();
-    this.pile.displayCard();
   }
 
   //Display cards to screen
@@ -334,6 +333,7 @@ class CardPile {
     this.setSuiteDisplay();
     //console.log(card);
     // console.log("Adding a card", this.topCard, this.suite, this.value);
+    this.displayCard();
   }
 
   //display the card on top of the deck
@@ -342,8 +342,12 @@ class CardPile {
     let pile = document.querySelector(".pile");
 
     pile.setAttribute("src", this.topCard.image);
+    pile.classList.toggle("animate");
 
-    let item = document.cre;
+    setTimeout(() => {
+      pile.classList.toggle("animate");
+    }, 2000);
+    // let item = document.cre;
   }
 }
 
@@ -377,14 +381,17 @@ const processTurns = (value, suite) => {
   console.log("Processing turns");
   if (player.playCard(value, suite)) {
     if (player.hand.length === 0) {
+      //   pile.displayCard();
       console.log("Player wins");
       winner("Congradulations!! You win");
     } else {
-      com.playCard();
+      setTimeout(() => {
+        com.playCard();
+        // pile.displayCard();
+      }, 3500);
     }
   }
 
-  pile.displayCard();
   player.displayHand();
   if (com.hand.length === 0) {
     winner("Sorry, you lose");
