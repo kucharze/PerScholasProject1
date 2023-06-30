@@ -9,11 +9,11 @@
   font-size: 30px;
 }
 body {
-  background-color: rgb(78, 180, 214);
+  background-color: rgb(13, 113, 195);
   /* color: goldenrod; */
 }
 .mark {
-  background-color: rgb(8, 134, 34);
+  background-color: rgb(78, 180, 214);
   width: 250;
   border: solid green;
   direction: left;
