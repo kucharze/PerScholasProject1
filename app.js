@@ -312,7 +312,7 @@ class CardPile {
       return "♣️ Clubs";
     }
     if (this.suite === "h") {
-      return "🧡 Hearts";
+      return "🖤 Hearts";
     }
     if (this.suite === "s") {
       return "♠️ Spades";
