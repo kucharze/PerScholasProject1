@@ -81,3 +81,12 @@ body {
 .curSuite {
   margin-left: 20px;
 }
+
+@media (max-width: 1200px) {
+  .mainTable {
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
