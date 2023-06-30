@@ -24,6 +24,7 @@ class Player {
   playCard(value, suite) {
     console.log("Playing card");
     if (this.canPlay) {
+      this.canPlay = false;
       if (
         value === this.pile.value ||
         value === "8" ||
@@ -155,7 +156,7 @@ class Computer {
   //--Draw a card if it can't find a card to play
   playCard() {
     console.log("The computer's turn to play");
-    let canPlay = false;
+
     let cardPlay = null;
     for (let i = 0; i < this.hand.length; i++) {
       if (
@@ -377,7 +378,6 @@ const processTurns = (value, suite) => {
   // - If the player properly processed their turn, or has not won yet, go to Computer turn
   // - Check if computer won (0 cards ), if not, process logic and get ready for another round
 
-  let win = document.querySelector(".Winner");
   console.log("Processing turns");
   if (player.playCard(value, suite)) {
     if (player.hand.length === 0) {
@@ -387,6 +387,7 @@ const processTurns = (value, suite) => {
     } else {
       setTimeout(() => {
         com.playCard();
+        player.canPlay = true;
         // pile.displayCard();
       }, 2500);
     }
