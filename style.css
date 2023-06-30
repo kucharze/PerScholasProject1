@@ -14,7 +14,7 @@ body {
   font-size: 20px;
 }
 .logo {
-  height: 150px;
+  height: 200px;
   margin: 10px;
 }
 .mark {
@@ -51,12 +51,10 @@ body {
 .mainTable {
   display: flex;
   margin-top: 50px;
-  /* margin-left: 500px; */
   justify-content: center;
 }
 .computerSpace {
   border-bottom: solid rgb(16, 62, 188);
-  /* margin-bottom: 20px; */
 }
 .playerSpace {
   border-top: solid rgb(16, 62, 188);
