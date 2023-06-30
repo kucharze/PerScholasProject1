@@ -300,8 +300,7 @@ class CardPile {
 
   //Function for setting the suite display for user
   setSuiteDisplay() {
-    document.querySelector(".curSuite").innerHTML =
-      "Current Suite: " + this.getSuiteWord();
+    document.querySelector(".curSuite").innerHTML = this.getSuiteWord();
   }
 
   //Get the full word for the current suite
