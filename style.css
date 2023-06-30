@@ -10,7 +10,12 @@
 }
 body {
   background-color: rgb(13, 113, 195);
-  /* color: goldenrod; */
+  /* color: rgb(202, 111, 26); */
+  font-size: 20px;
+}
+.logo {
+  height: 150px;
+  margin: 10px;
 }
 .mark {
   background-color: rgb(78, 180, 214);
@@ -65,10 +70,7 @@ body {
   justify-content: center;
   align-content: center;
 }
-.logo {
-  height: 150px;
-  margin: 10px;
-}
+
 .playAgain {
   margin-left: 40px;
   display: none;
