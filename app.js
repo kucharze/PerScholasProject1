@@ -170,8 +170,14 @@ class Computer {
     }
     if (cardPlay != null) {
       console.log("Computer is playing a card");
+      if (cardPlay.value === "8") {
+        this.pile.addCard(cardPlay, false);
 
-      this.pile.addCard(cardPlay, true);
+        this.pile.setSuite(this.findBestSuite());
+      } else {
+        this.pile.addCard(cardPlay, true);
+      }
+
       //return cardPlay;
     } else {
       console.log("Computer is drawing");
