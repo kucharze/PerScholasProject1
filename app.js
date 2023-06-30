@@ -346,7 +346,7 @@ class CardPile {
 
     setTimeout(() => {
       pile.classList.toggle("animate");
-    }, 2000);
+    }, 1500);
     // let item = document.cre;
   }
 }
@@ -383,18 +383,18 @@ const processTurns = (value, suite) => {
     if (player.hand.length === 0) {
       //   pile.displayCard();
       console.log("Player wins");
-      winner("Congradulations!! You win");
+      winner("You won!!");
     } else {
       setTimeout(() => {
         com.playCard();
         // pile.displayCard();
-      }, 3500);
+      }, 2500);
     }
   }
 
   player.displayHand();
   if (com.hand.length === 0) {
-    winner("Sorry, you lose");
+    winner("Sorry, you lost");
   }
 };
 
@@ -409,7 +409,7 @@ const drawCard = () => {
   pile.displayCard();
   com.displayHand();
   if (com.hand.length === 0) {
-    winner("Sorry, you lose");
+    winner("Sorry, you lost");
   }
 };
 
@@ -424,7 +424,7 @@ const chooseSuite = (suite) => {
   player.canPlay = true;
   if (player.hand.length === 0) {
     console.log("Player wins");
-    winner("Congradulations!! You win");
+    winner("You won!!");
   } else {
     com.playCard();
   }
