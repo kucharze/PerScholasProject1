@@ -53,17 +53,17 @@ body {
 }
 @keyframes moving {
   0% {
-    /* left: -300; */
-  }
-  100% {
-    /* left: 100%; */
+    transform: translateX(-1500px);
   }
 }
 
+.animation {
+  animation: moving 2s;
+}
 .pile {
   height: 200px;
   margin-left: 20px;
-  animation: moving 2s infinite;
+  animation: moving 2s;
 }
 .mainTable {
   display: flex;
