@@ -389,7 +389,7 @@ const processTurns = (value, suite) => {
         com.playCard();
         player.canPlay = true;
         // pile.displayCard();
-      }, 2000);
+      }, 1500);
     }
   }
 

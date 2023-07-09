@@ -58,7 +58,7 @@ body {
 }
 
 .animate {
-  animation: moving 1s;
+  animation: moving 1.2s;
 }
 .pile {
   height: 200px;
