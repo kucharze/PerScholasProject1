@@ -347,7 +347,7 @@ class CardPile {
 
     setTimeout(() => {
       pile.classList.toggle("animate");
-    }, 1500);
+    }, 1300);
     // let item = document.cre;
   }
 }
@@ -389,7 +389,7 @@ const processTurns = (value, suite) => {
         com.playCard();
         player.canPlay = true;
         // pile.displayCard();
-      }, 2500);
+      }, 2000);
     }
   }
 
@@ -401,16 +401,26 @@ const processTurns = (value, suite) => {
 
 //Draw a card
 const drawCard = () => {
-  console.log("Drawing a card");
-  player.hand.push(deck.dealACard());
-  player.displayHand();
+  if (player.canPlay) {
+    console.log("Drawing a card");
+    player.hand.push(deck.dealACard());
+    player.displayHand();
 
-  com.playCard();
+    player.canPlay = false;
 
-  pile.displayCard();
-  com.displayHand();
-  if (com.hand.length === 0) {
-    winner("Sorry, you lost");
+    setTimeout(() => {
+      player.canPlay = true;
+      // pile.displayCard();
+    }, 1500);
+
+    //pile.displayCard();
+    com.playCard();
+    com.displayHand();
+    if (com.hand.length === 0) {
+      winner("Sorry, you lost");
+    }
+  } else {
+    alert("A different action must be completed");
   }
 };
 
@@ -422,12 +432,16 @@ const chooseSuite = (suite) => {
 
   document.querySelector(".suitePicker").style = "display:none";
   pile.setSuite(suite);
-  player.canPlay = true;
+  // player.canPlay = true;
   if (player.hand.length === 0) {
     console.log("Player wins");
     winner("You won!!");
   } else {
-    com.playCard();
+    setTimeout(() => {
+      com.playCard();
+      player.canPlay = true;
+      // pile.displayCard();
+    }, 1500);
   }
 };
 
