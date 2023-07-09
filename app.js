@@ -387,7 +387,9 @@ const processTurns = (value, suite) => {
     } else {
       setTimeout(() => {
         com.playCard();
-        player.canPlay = true;
+        setTimeout(() => {
+          player.canPlay = true;
+        }, 500);
         // pile.displayCard();
       }, 1500);
     }
@@ -439,7 +441,10 @@ const chooseSuite = (suite) => {
   } else {
     setTimeout(() => {
       com.playCard();
-      player.canPlay = true;
+      setTimeout(() => {
+        player.canPlay = true;
+      }, 500);
+
       // pile.displayCard();
     }, 1500);
   }
