@@ -6,9 +6,11 @@ Click on a card to play it
 - to play a card it must match the suit or value of the card on the pile
 - You can play an 8 and change the suit to whatever you want it to be
 
-If you have not cards to play, clcik the deck to draw a card
+If you have not cards to play, click the deck to draw a card
 
 Afterwards, the computer gets a turn
+Com plays the first playable card
+If they play an 8 they will change the suit based on what is in their hand.
 
 THe game continues until one player runs out of cards in hand
 
