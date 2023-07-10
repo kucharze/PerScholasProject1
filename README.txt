@@ -12,7 +12,7 @@ Afterwards, the computer gets a turn
 Com plays the first playable card
 If they play an 8 they will change the suit based on what is in their hand.
 
-THe game continues until one player runs out of cards in hand
+The game continues until one player runs out of cards in hand
 
 Also contians features such as:
 - animations
